@@ -8,7 +8,7 @@ if echo "$configs" | grep -iq "^y" ;then
     cp -R nvim ~/.config/
     cp -R kitty ~/.config/
 else
-  echo 'Skip zshrc installation.'
+  echo 'Skip configs installation.'
 fi
 
 echo -n "Install ohmyzsh (y/n)?"

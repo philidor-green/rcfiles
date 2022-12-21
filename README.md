@@ -26,7 +26,7 @@ Install Homebrew and OhMyZSH, Sync the files.
 Apply macOS settings.
 
 ```
-./macos
+./macos.sh
 ```
 
 ### Install tools and apps
