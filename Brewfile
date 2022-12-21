@@ -18,6 +18,7 @@ cask "font-monofur-nerd-font"
 cask "telegram"
 cask "slack"
 cask "transmission"
+cask "kitty"
 
 # System
 brew "mas"
