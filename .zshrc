@@ -52,3 +52,8 @@ export CARGO_NET_GIT_FETCH_WITH_CLI=true
 
 . "$HOME/.cargo/env"
 
+
+# pnpm
+export PNPM_HOME="/Users/think/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

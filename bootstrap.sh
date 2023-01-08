@@ -7,6 +7,7 @@ if echo "$configs" | grep -iq "^y" ;then
     cp .gitconfig ~/.gitconfig
     cp -R nvim ~/.config/
     cp -R kitty ~/.config/
+    cp -R zellij ~/.config/
 else
   echo 'Skip configs installation.'
 fi
