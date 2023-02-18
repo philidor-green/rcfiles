@@ -13,5 +13,5 @@ vim.keymap.set('i', '<left>', '')
 vim.keymap.set('i', '<right>', '')
 
 -- save
-vim.keymap.set('n', '<leader>w', '<Esc>:w<cr><Space>')
+vim.keymap.set('n', '<leader>w', '<Esc>:w<cr>')
 

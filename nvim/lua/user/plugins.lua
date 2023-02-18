@@ -36,6 +36,7 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use "nvim-lua/popup.nvim"
   use "nvim-lua/plenary.nvim"
+  use 'tpope/vim-vinegar'
 
   use {
       "luukvbaal/nnn.nvim",
@@ -49,18 +50,11 @@ return packer.startup(function(use)
 	  end
   }
 
-  use { 
-      "hrsh7th/nvim-cmp",
-	  config = function()
-		  require('plugins.cmp')
-	  end
-  }
-
   use {
 	  'projekt0n/github-nvim-theme',
 	  config = function()
 		  require('github-theme').setup({
-			  theme_style = "light",
+			  theme_style = "light"
 		  })
 	  end
   }
@@ -106,9 +100,10 @@ return packer.startup(function(use)
   }
 
   use {
-      'olexsmir/gopher.nvim',
+      'ray-x/go.nvim',
+      requires = { { 'ray-x/guihua.lua' } } ,
       config = function()
-          require('plugins.gopher')
+          require('plugins.go')
       end
   }
 
@@ -122,6 +117,7 @@ return packer.startup(function(use)
 
           -- Autocompletion
           { 'hrsh7th/nvim-cmp' },
+          { 'hrsh7th/cmp-cmdline' },
           { 'hrsh7th/cmp-buffer' },
           { 'hrsh7th/cmp-path' },
           { 'saadparwaiz1/cmp_luasnip' },
@@ -135,6 +131,7 @@ return packer.startup(function(use)
       },
       config = function()
           require('plugins.lsp')
+		  require('plugins.cmp')
           require('lspkind').init({})
       end
   }

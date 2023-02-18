@@ -2,11 +2,9 @@ local lsp = require('lsp-zero')
 
 lsp.preset("recommended")
 
-
 lsp.ensure_installed({
   'gopls',
   'tsserver',
-  'sumneko_lua',
 })
 
 local cmp = require('cmp')
@@ -28,7 +26,7 @@ lsp.set_preferences({
     }
 })
 
-vim.diagnostic.config({
+vm.diagnostic.config({
     virtual_text = true,
 })
 
@@ -45,6 +43,8 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
   vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
+  vim.keymap.set('n', '<leader>K', vim.lsp.buf.hover, opts)
+  vim.keymap.set('n', '<leader>S', vim.lsp.buf.signature_help, opts)
 
   vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
   vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)

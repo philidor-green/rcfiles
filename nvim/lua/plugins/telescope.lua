@@ -1,14 +1,23 @@
 require('telescope').setup {
-	pickers = {
-		buffers = {
-			-- начинать в normal моде при открытии списка буферов
-			initial_mode = 'normal'
-		}
-	}
+    pickers = {
+        buffers = {
+            initial_mode = 'normal'
+        }
+    }
 }
-local map = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
--- горячие клавиши
-map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', opts)
-map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', opts)
-map('n', '<leader>fb', '<cmd>Telescope buffers<CR>', opts)
+vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
+vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>/', function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '[/] Fuzzily search in current buffer' })
+
+vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
+vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
+vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
+vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+
