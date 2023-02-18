@@ -5,6 +5,7 @@ lsp.preset("recommended")
 lsp.ensure_installed({
   'gopls',
   'tsserver',
+  'golangci_lint_ls'
 })
 
 local cmp = require('cmp')
