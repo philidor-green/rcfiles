@@ -35,80 +35,53 @@ packer.init({
 return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use "nvim-lua/popup.nvim"
-  use "nvim-lua/plenary.nvim"
   use 'tpope/vim-vinegar'
 
   use {
-      "luukvbaal/nnn.nvim",
-      config = function() require("nnn").setup() end
+      "luukvbaal/nnn.nvim"
   }
 
   use {
-	  'kyazdani42/nvim-web-devicons',
-	  config = function()
-		  require('nvim-web-devicons').setup({ default = true; })
-	  end
+	  'kyazdani42/nvim-web-devicons'
   }
 
   use {
-	  'projekt0n/github-nvim-theme',
-	  config = function()
-		  require('github-theme').setup({
-			  theme_style = "light"
-		  })
-	  end
+	  'projekt0n/github-nvim-theme'
   }
 
   use {
 	  'nvim-lualine/lualine.nvim',
-	  requires = { 'projekt0n/github-nvim-theme' },
-	  config = function()
-		  require('plugins.lualine')
-	  end
+	  requires = { 'projekt0n/github-nvim-theme' }
   }
 
   use {
       'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate',
-      config = function()
-          require('plugins.treesitter')
-      end
+      run = ':TSUpdate'
   }
 
   use {
       'nvim-telescope/telescope.nvim',
       tag = '0.1.0',
-      requires = { { 'nvim-lua/plenary.nvim' } },
-      config = function()
-          require('plugins.telescope')
-      end
+      requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
 
   use {
-      'numToStr/Comment.nvim',
-      config = function()
-          require('Comment').setup()
-      end
+      'numToStr/Comment.nvim'
   }
 
   use {
-      'windwp/nvim-autopairs',
-      config = function()
-          require("nvim-autopairs").setup()
-      end
+      'windwp/nvim-autopairs'
   }
 
   use {
       'ray-x/go.nvim',
-      requires = { { 'ray-x/guihua.lua' } } ,
-      config = function()
-          require('plugins.go')
-      end
+      requires = { { 'ray-x/guihua.lua' } }
   }
 
   use {
       'VonHeikemen/lsp-zero.nvim',
+      branch = 'v1.x',
       requires = {
           -- LSP Support
           { 'neovim/nvim-lspconfig' },
@@ -117,37 +90,26 @@ return packer.startup(function(use)
 
           -- Autocompletion
           { 'hrsh7th/nvim-cmp' },
-          { 'hrsh7th/cmp-cmdline' },
+          { 'hrsh7th/cmp-nvim-lsp' },
           { 'hrsh7th/cmp-buffer' },
           { 'hrsh7th/cmp-path' },
           { 'saadparwaiz1/cmp_luasnip' },
-          { 'hrsh7th/cmp-nvim-lsp' },
           { 'hrsh7th/cmp-nvim-lua' },
           { 'onsails/lspkind.nvim' },
+          { 'hrsh7th/cmp-cmdline' },
 
           -- Snippets
           { 'L3MON4D3/LuaSnip' },
           { 'rafamadriz/friendly-snippets' },
-      },
-      config = function()
-          require('plugins.lsp')
-		  require('plugins.cmp')
-          require('lspkind').init({})
-      end
+      }
   }
 
   use {
-      'simrat39/rust-tools.nvim',
-      config = function()
-          require('plugins.rust')
-      end
+      'simrat39/rust-tools.nvim'
   }
 
   use {
-      'lewis6991/gitsigns.nvim',
-      config = function()
-          require('gitsigns').setup()
-      end
+      'lewis6991/gitsigns.nvim'
   }
 
   if PACKER_BOOTSTRAP then
