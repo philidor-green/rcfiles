@@ -13,3 +13,4 @@ require("nvim-autopairs").setup()
 require('go').setup()
 require('configs.rust')
 require('gitsigns').setup()
+require"fidget".setup{}

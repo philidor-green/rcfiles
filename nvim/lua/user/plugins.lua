@@ -104,6 +104,8 @@ return packer.startup(function(use)
       }
   }
 
+  use 'j-hui/fidget.nvim'
+
   use {
       'simrat39/rust-tools.nvim'
   }
@@ -111,6 +113,16 @@ return packer.startup(function(use)
   use {
       'lewis6991/gitsigns.nvim'
   }
+
+  use({
+      "kylechui/nvim-surround",
+      tag = "*",
+      config = function()
+          require("nvim-surround").setup({
+              -- Configuration here, or leave empty to use defaults
+          })
+      end
+  })
 
   if PACKER_BOOTSTRAP then
     require('packer').sync()
