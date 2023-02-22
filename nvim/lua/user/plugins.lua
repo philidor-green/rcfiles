@@ -114,13 +114,13 @@ return packer.startup(function(use)
       'lewis6991/gitsigns.nvim'
   }
 
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+
   use({
       "kylechui/nvim-surround",
       tag = "*",
       config = function()
-          require("nvim-surround").setup({
-              -- Configuration here, or leave empty to use defaults
-          })
+          require("nvim-surround").setup({})
       end
   })
 
