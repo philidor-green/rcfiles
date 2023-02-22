@@ -45,13 +45,17 @@ return packer.startup(function(use)
 	  'kyazdani42/nvim-web-devicons'
   }
 
-  use {
-	  'projekt0n/github-nvim-theme'
-  }
+  use({
+      'rose-pine/neovim',
+      as = 'rose-pine',
+      config = function()
+          require("rose-pine").setup()
+          vim.cmd('colorscheme rose-pine')
+      end
+  })
 
   use {
-	  'nvim-lualine/lualine.nvim',
-	  requires = { 'projekt0n/github-nvim-theme' }
+	  'nvim-lualine/lualine.nvim'
   }
 
   use {

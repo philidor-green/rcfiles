@@ -28,6 +28,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
    require('go.format').goimport()
+   vim.lsp.buf.formatting_sync(nil, 3000)
   end,
   group = format_sync_grp,
 })
