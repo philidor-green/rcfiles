@@ -14,4 +14,5 @@ vim.keymap.set('i', '<right>', '')
 
 -- save
 vim.keymap.set('n', '<leader>w', '<Esc>:w<cr>')
+vim.keymap.set('n', '<leader>req', function() require('rest-nvim').run() end)
 

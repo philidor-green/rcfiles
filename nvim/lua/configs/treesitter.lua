@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { 'toml', 'dockerfile', 'help', 'vim', 'go', 'lua', 'rust', 'sql', 'javascript', 'typescript' },
+  ensure_installed = { 'http', 'json', 'toml', 'dockerfile', 'help', 'vim', 'go', 'lua', 'rust', 'sql', 'javascript', 'typescript' },
   sync_install = false,
   auto_install = false,
   highlight = {
